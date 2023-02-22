@@ -26,20 +26,16 @@ const Home = () => {
         const selectedOption = e.target.value;
         dispatch(addOptions4(selectedOption));
     }
+
     const handleOptionChange5 = (e) => {
-        // setSelectedOption(e.target.value);
         const selectedOption = e.target.value;
         dispatch(addOptions5(selectedOption));
-        // this.props.addOptions(selectedOption);
-
     }
 
     const rows = useSelector(state => state.rows)
     const handleAddRow = (row) => {
         dispatch(addrows(row));
     };
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
