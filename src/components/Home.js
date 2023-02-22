@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from './Header';
 import AddedData from './AddedData';
 import { useSelector, useDispatch, connect } from 'react-redux';
-import { book, addOptions, addOptions2 } from '../Redux/detailcounter/actions';
+import { book, addOptions, addOptions2, addOptions3, addOptions4, addOptions5 } from '../Redux/detailcounter/actions';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -28,18 +28,39 @@ const Home = () => {
         // this.props.addOptions(selectedOption);
 
     }
+    const handleOptionChange3 = (e) => {
+        // setSelectedOption(e.target.value);
+        const selectedOption = e.target.value;
+        dispatch(addOptions3(selectedOption));
+        // this.props.addOptions(selectedOption);
+
+    }
+    const handleOptionChange4 = (e) => {
+        // setSelectedOption(e.target.value);
+        const selectedOption = e.target.value;
+        dispatch(addOptions4(selectedOption));
+        // this.props.addOptions(selectedOption);
+
+    }
+    const handleOptionChange5 = (e) => {
+        // setSelectedOption(e.target.value);
+        const selectedOption = e.target.value;
+        dispatch(addOptions5(selectedOption));
+        // this.props.addOptions(selectedOption);
+
+    }
     // const handleOptionChange2 = (e) => {
     //     setSelectedOption2(e.target.value);
     // }
-    const handleOptionChange3 = (e) => {
-        setSelectedOption3(e.target.value);
-    }
-    const handleOptionChange4 = (e) => {
-        setSelectedOption4(e.target.value);
-    }
-    const handleOptionChange5 = (e) => {
-        setSelectedOption5(e.target.value);
-    }
+    // const handleOptionChange3 = (e) => {
+    //     setSelectedOption3(e.target.value);
+    // }
+    // const handleOptionChange4 = (e) => {
+    //     setSelectedOption4(e.target.value);
+    // }
+    // const handleOptionChange5 = (e) => {
+    //     setSelectedOption5(e.target.value);
+    // }
 
     const addrows = () => {
         setcom([...newcom, {}]);
@@ -48,9 +69,9 @@ const Home = () => {
     const handleSubmit = (e) => {
         // console.log(selectedOption);
         // console.log(selectedOption2);
-        console.log(selectedOption3);
-        console.log(selectedOption4);
-        console.log(selectedOption5);
+        // console.log(selectedOption3);
+        // console.log(selectedOption4);
+        // console.log(selectedOption5);
         // setSelectedOption(e.target.value);
 
         e.preventDefault();
@@ -160,11 +181,11 @@ const Home = () => {
                 </div>
                 {
                     newcom.map(nc => <AddedData
-                        // selectedOption={selectedOption}
-                        // selectedOption2={selectedOption2}
-                        selectedOption3={selectedOption3}
-                        selectedOption4={selectedOption4}
-                        selectedOption5={selectedOption5}
+                    // selectedOption={selectedOption}
+                    // selectedOption2={selectedOption2}
+                    // selectedOption3={selectedOption3}
+                    // selectedOption4={selectedOption4}
+                    // selectedOption5={selectedOption5}
                     ></AddedData>)
                 }
                 {/* <!-- Preview Data --> */}

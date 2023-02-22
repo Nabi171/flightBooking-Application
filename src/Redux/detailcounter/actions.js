@@ -7,8 +7,6 @@ export const book = (selectedValue) => {
     }
 }
 
-
-
 export const addOptions = (options) => {
     return {
         type: ADD_OPTIONS,

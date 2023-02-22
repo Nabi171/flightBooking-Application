@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 const AddedData = ({
     optionValue,
     optionValue2,
+    optionValue3,
+    optionValue4,
+    optionValue5,
     // selectedOption2,
-    selectedOption3,
-    selectedOption4,
-    selectedOption5
+    // selectedOption3,
+    // selectedOption4,
+    // selectedOption5
 
 }) => {
     return (
@@ -38,13 +41,13 @@ const AddedData = ({
                                 <p class="lws-bookedTo">{optionValue2}</p>
                             </td>
                             <td class="px-6 py-4 text-center">
-                                <p class="lws-bookedDate">{selectedOption3}</p>
+                                <p class="lws-bookedDate">{optionValue3}</p>
                             </td>
                             <td class="px-6 py-4 text-center">
-                                <p class="lws-bookedGustes">{selectedOption4}</p>
+                                <p class="lws-bookedGustes">{optionValue4}</p>
                             </td>
                             <td class="px-6 py-4 text-center">
-                                <span class="lws-bookedClass"> {selectedOption5} </span>
+                                <span class="lws-bookedClass"> {optionValue5} </span>
                             </td>
                             <td class="px-6 py-4 text-center">
                                 <div class="flex justify-center gap-4">
@@ -70,6 +73,9 @@ const mapStateToProps = (state) => {
     return {
         optionValue: state.optionValue,
         optionValue2: state.optionValue2,
+        optionValue3: state.optionValue3,
+        optionValue4: state.optionValue4,
+        optionValue5: state.optionValue5,
     };
 };
 
