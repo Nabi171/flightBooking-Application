@@ -197,21 +197,5 @@ const Home = () => {
 };
 
 
-// const mapStateToProps = (state) => {
-//     return {
-//         // count: state.value,
-//         selectedOption: state.value,
-//     };
-// };
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         // increment: (value) => dispatch(increment(value)),
-//         // decrement: (value) => dispatch(decrement(value)),
-//         addOptions: (value) => dispatch(addOptions(value)),
-//     };
-// };
 
-
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Home);
 export default Home;
