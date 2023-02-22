@@ -128,7 +128,7 @@ const Home = () => {
                             </div>
 
                             <button class="addCity" type="submit" id="lws-addCity"
-                                // onClick={addrows}
+
                                 onClick={handleAddRow}
                             >
                                 <svg width="15px" height="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -148,7 +148,7 @@ const Home = () => {
 
                     ></AddedData>)
                 }
-                {/* <!-- Preview Data --> */}
+
 
             </section>
 
