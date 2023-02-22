@@ -1,7 +1,7 @@
-import { BOOK, ADD_ROWS, HANDLE_OPTIONCHANGE, ADD_OPTIONS, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS5, ADD_OPTIONS4 } from "./detailcounter/actionTypes";
+import { BOOK, ADD_ROWS, HANDLE_OPTIONCHANGE, ADD_OPTIONS, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS5, ADD_OPTIONS4, ADD_ROW } from "./detailcounter/actionTypes";
 
 const initialState = {
-    // value: [],
+    rows: [],
     optionValue: null,
     optionValue2: null,
     optionValue3: null,
@@ -12,11 +12,11 @@ const initialState = {
 
 const actionReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_ROWS:
+        case ADD_ROW:
 
             return {
                 ...state,
-                value: [...state.items, action.payload]
+                rows: [...state.rows, action.payload]
             };
         case ADD_OPTIONS:
 

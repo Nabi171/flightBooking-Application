@@ -8,10 +8,7 @@ const AddedData = ({
     optionValue3,
     optionValue4,
     optionValue5,
-    // selectedOption2,
-    // selectedOption3,
-    // selectedOption4,
-    // selectedOption5
+
 
 }) => {
     return (
@@ -68,7 +65,7 @@ const AddedData = ({
     );
 };
 
-// export default AddedData;
+
 const mapStateToProps = (state) => {
     return {
         optionValue: state.optionValue,

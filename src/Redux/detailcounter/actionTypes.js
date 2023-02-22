@@ -4,4 +4,4 @@ export const ADD_OPTIONS3 = 'addOptions3';
 export const ADD_OPTIONS4 = 'addOptions4';
 export const ADD_OPTIONS5 = 'addOptions5';
 export const BOOK = 'book';
-export const ADD_ROWS = 'add_rows';
+export const ADD_ROW = 'add_row';

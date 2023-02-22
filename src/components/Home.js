@@ -1,46 +1,30 @@
-import React, { useState } from 'react';
-import Header from './Header';
+import React from 'react';
 import AddedData from './AddedData';
-import { useSelector, useDispatch, connect } from 'react-redux';
-import { book, addOptions, addOptions2, addOptions3, addOptions4, addOptions5 } from '../Redux/detailcounter/actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { addOptions, addOptions2, addOptions3, addOptions4, addOptions5, addrows } from '../Redux/detailcounter/actions';
 
 const Home = () => {
-    const dispatch = useDispatch();
-    // const [selectedOption, setSelectedOption] = useState('Dhaka');
-    // const [selectedOption2, setSelectedOption2] = useState('Dhaka');
-    const [selectedOption3, setSelectedOption3] = useState('');
-    const [selectedOption4, setSelectedOption4] = useState('1');
-    const [selectedOption5, setSelectedOption5] = useState('Business');
-    const [newcom, setcom] = useState([])
-    // const [selectedOption, setSelectedOption] = useState('Dhaka');
 
+    const dispatch = useDispatch();
     const handleOptionChange = (e) => {
-        // setSelectedOption(e.target.value);
         const selectedOption = e.target.value;
         dispatch(addOptions(selectedOption));
-        // this.props.addOptions(selectedOption);
-
     }
+
     const handleOptionChange2 = (e) => {
-        // setSelectedOption(e.target.value);
         const selectedOption = e.target.value;
         dispatch(addOptions2(selectedOption));
-        // this.props.addOptions(selectedOption);
-
     }
+
     const handleOptionChange3 = (e) => {
-        // setSelectedOption(e.target.value);
         const selectedOption = e.target.value;
         dispatch(addOptions3(selectedOption));
-        // this.props.addOptions(selectedOption);
 
     }
+
     const handleOptionChange4 = (e) => {
-        // setSelectedOption(e.target.value);
         const selectedOption = e.target.value;
         dispatch(addOptions4(selectedOption));
-        // this.props.addOptions(selectedOption);
-
     }
     const handleOptionChange5 = (e) => {
         // setSelectedOption(e.target.value);
@@ -49,36 +33,19 @@ const Home = () => {
         // this.props.addOptions(selectedOption);
 
     }
-    // const handleOptionChange2 = (e) => {
-    //     setSelectedOption2(e.target.value);
-    // }
-    // const handleOptionChange3 = (e) => {
-    //     setSelectedOption3(e.target.value);
-    // }
-    // const handleOptionChange4 = (e) => {
-    //     setSelectedOption4(e.target.value);
-    // }
-    // const handleOptionChange5 = (e) => {
-    //     setSelectedOption5(e.target.value);
-    // }
 
-    const addrows = () => {
-        setcom([...newcom, {}]);
-    }
+    const rows = useSelector(state => state.rows)
+    const handleAddRow = (row) => {
+        dispatch(addrows(row));
+    };
+
+
 
     const handleSubmit = (e) => {
-        // console.log(selectedOption);
-        // console.log(selectedOption2);
-        // console.log(selectedOption3);
-        // console.log(selectedOption4);
-        // console.log(selectedOption5);
-        // setSelectedOption(e.target.value);
-
         e.preventDefault();
     }
 
-    // const data = useSelector((state) => state.data)
-    // const dispatch = useDispatch();
+
     return (
         <div>
             <section>
@@ -165,7 +132,8 @@ const Home = () => {
                             </div>
 
                             <button class="addCity" type="submit" id="lws-addCity"
-                                onClick={addrows}
+                                // onClick={addrows}
+                                onClick={handleAddRow}
                             >
                                 <svg width="15px" height="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
 
@@ -180,12 +148,8 @@ const Home = () => {
 
                 </div>
                 {
-                    newcom.map(nc => <AddedData
-                    // selectedOption={selectedOption}
-                    // selectedOption2={selectedOption2}
-                    // selectedOption3={selectedOption3}
-                    // selectedOption4={selectedOption4}
-                    // selectedOption5={selectedOption5}
+                    rows.map(nc => <AddedData
+
                     ></AddedData>)
                 }
                 {/* <!-- Preview Data --> */}
@@ -195,6 +159,9 @@ const Home = () => {
         </div>
     );
 };
+
+
+
 
 
 

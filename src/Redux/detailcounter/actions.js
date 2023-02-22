@@ -1,4 +1,4 @@
-import { BOOK, ADD_OPTIONS, HANDLE_OPTIONCHANGE, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS4, ADD_OPTIONS5 } from "./actionTypes";
+import { BOOK, ADD_OPTIONS, HANDLE_OPTIONCHANGE, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS4, ADD_OPTIONS5, ADD_ROW } from "./actionTypes";
 
 export const book = (selectedValue) => {
     return {
@@ -37,10 +37,10 @@ export const addOptions5 = (options) => {
         payload: options,
     };
 };
-export const addrows = (value) => {
+export const addrows = (row) => {
     return {
-        type: ADD_OPTIONS,
-        payload: value,
+        type: ADD_ROW,
+        payload: row,
     };
 };
 
