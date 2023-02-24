@@ -1,4 +1,4 @@
-import { BOOK, ADD_OPTIONS, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS4, ADD_OPTIONS5, ADD_ROW } from "./actionTypes";
+import { BOOK, ADD_OPTIONS, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS4, ADD_OPTIONS5, ADD_ROW, DELETE_ROW } from "./actionTypes";
 
 export const book = (selectedValue) => {
     return {
@@ -45,4 +45,10 @@ export const addrows = (row) => {
 };
 
 
+export function deleteRow(options) {
+    return {
+        type: DELETE_ROW,
+        options,
 
+    };
+}

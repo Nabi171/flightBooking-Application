@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AddedData from './AddedData';
 import { useSelector, useDispatch } from 'react-redux';
 import { addOptions, addOptions2, addOptions3, addOptions4, addOptions5, addrows } from '../Redux/detailcounter/actions';
 
 const Home = () => {
-
+    const [data, setdata] = useState([]);
+    const [isDisabled, setIsDisabled] = useState(false);
     const dispatch = useDispatch();
     const handleOptionChange = (e) => {
         const selectedOption = e.target.value;
@@ -33,11 +34,23 @@ const Home = () => {
     }
 
     const rows = useSelector(state => state.rows)
+
+    // if(rows.length==3){
+
+
+    // }
     const handleAddRow = (row) => {
         dispatch(addrows(row));
     };
 
+
+    // const handleClick = () => {
+    //     // Do something when the button is clicked
+    //     setIsClicked(true);
+    // }
+
     const handleSubmit = (e) => {
+        // setIsClicked(true);
         e.preventDefault();
     }
 
@@ -128,8 +141,10 @@ const Home = () => {
                             </div>
 
                             <button class="addCity" type="submit" id="lws-addCity"
-
-                                onClick={handleAddRow}
+                                disabled={isDisabled}
+                                onClick={
+                                    (rows.length < 3) ? handleAddRow : () => setIsDisabled(true)
+                                }
                             >
                                 <svg width="15px" height="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
 
@@ -145,7 +160,8 @@ const Home = () => {
                 </div>
                 {
                     rows.map(nc => <AddedData
-
+                        data={data}
+                        setdata={setdata}
                     ></AddedData>)
                 }
 

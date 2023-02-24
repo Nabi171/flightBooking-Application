@@ -1,4 +1,4 @@
-import { BOOK, ADD_ROWS, HANDLE_OPTIONCHANGE, ADD_OPTIONS, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS5, ADD_OPTIONS4, ADD_ROW } from "./detailcounter/actionTypes";
+import { BOOK, ADD_ROWS, HANDLE_OPTIONCHANGE, ADD_OPTIONS, ADD_OPTIONS2, ADD_OPTIONS3, ADD_OPTIONS5, ADD_OPTIONS4, ADD_ROW, DELETE_ROW } from "./detailcounter/actionTypes";
 
 const initialState = {
     rows: [],
@@ -53,6 +53,13 @@ const actionReducer = (state = initialState, action) => {
                 optionValue5: action.payload
 
             };
+
+        case DELETE_ROW:
+            return {
+                ...state,
+                rows: state.rows.filter((row) => row.optionValue !== action.payload)
+            };
+
         default:
             return state;
     }
