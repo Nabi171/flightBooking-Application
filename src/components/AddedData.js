@@ -9,14 +9,9 @@ const AddedData = ({
     optionValue3,
     optionValue4,
     optionValue5,
-    data,
-    setdata
-
 
 }) => {
-    const deletedata = () => {
-        setdata(data);
-    }
+
     const dispatch = useDispatch();
     const handleDeleteRow = (optionValue) => {
         dispatch(deleteRow(optionValue))
