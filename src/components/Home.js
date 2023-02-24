@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addOptions, addOptions2, addOptions3, addOptions4, addOptions5, addrows } from '../Redux/detailcounter/actions';
 
 const Home = () => {
-    const [data, setdata] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
     const dispatch = useDispatch();
     const handleOptionChange = (e) => {
@@ -35,22 +34,16 @@ const Home = () => {
 
     const rows = useSelector(state => state.rows)
 
-    // if(rows.length==3){
 
-
-    // }
     const handleAddRow = (row) => {
         dispatch(addrows(row));
     };
 
 
-    // const handleClick = () => {
-    //     // Do something when the button is clicked
-    //     setIsClicked(true);
-    // }
+
 
     const handleSubmit = (e) => {
-        // setIsClicked(true);
+
         e.preventDefault();
     }
 
@@ -160,8 +153,7 @@ const Home = () => {
                 </div>
                 {
                     rows.map(nc => <AddedData
-                        data={data}
-                        setdata={setdata}
+
                     ></AddedData>)
                 }
 
